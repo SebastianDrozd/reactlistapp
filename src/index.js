@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Main from "./routes/LandingPage"
 import ErrorPage from './routes/ErrorPage';
 import {
   createBrowserRouter,
@@ -12,8 +11,8 @@ import Signup from './routes/Signup';
 import Home from './routes/Home';
 import { Auth0Provider } from "@auth0/auth0-react";
 import LandingPage from './routes/LandingPage';
-import {createContext} from 'react';
-const newContext = React.createContext({ loggedIn: false });
+import { Provider } from 'react-redux'
+import {store} from './Redux/store'
 const router = createBrowserRouter([
   
   {
@@ -38,6 +37,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+     <Provider store={store}>
     <Auth0Provider
       domain="dev-at5wa91z.us.auth0.com"
       clientId="hYl3Xg5G4jcZICeuqEngh9E9oSvlB3Xf"
@@ -45,6 +45,7 @@ root.render(
     >
       <RouterProvider router={router} />
     </Auth0Provider>
+    </Provider>
   </React.StrictMode>
 );
 
