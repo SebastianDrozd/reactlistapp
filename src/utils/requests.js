@@ -12,4 +12,8 @@ export const checkLoggedStatus = () => {
    return axios.get("http://127.0.0.1:4000")
 }
 
+export const createTodo = (todo) => {
+   return axios.post("http://127.0.0.1:4000/api/todos",todo)
+}
+
 
