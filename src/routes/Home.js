@@ -10,7 +10,7 @@ const Home = () => {
   const [description, setDescription] = useState("")
   const [publicTodo, setPublicTodo] = useState("off")
   const dispatch = useDispatch()
-  const { user, isAuthenticated, isLoading, logout } = useAuth0();
+  const { user, isAuthenticated, isLoading, logout,getAccessTokenSilently } = useAuth0();
   const logoutButton = () => {
     logout({ returnTo: window.location.origin })
     dispatch(setLoggedOut())
@@ -29,9 +29,14 @@ const Home = () => {
 
   else{
   dispatch(setLoggedIn())
-  createApiToken().then(res => {
-    console.log(res.body)
+  getAccessTokenSilently().then(res => {
+    localStorage.setItem("token",res)
+    console.log(localStorage.getItem("token"))
   })
+  
+  //createApiToken().then(res => {
+   // console.log(res.body)
+  //})
 
   return (
 
