@@ -1,6 +1,15 @@
 import React from 'react'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom"
+import { setFullyLoggedOut } from '../Redux/userSlice'
 const Navbar = () => {
+  const username = useSelector(state => state.user.name)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const logout = () => {
+    dispatch(setFullyLoggedOut())
+    navigate("/")
+  }
   return (
     <>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -14,7 +23,18 @@ const Navbar = () => {
             </ul>
             <form class="d-flex" role="search">
 
-              <button class="btn btn-outline-success" type="submit">   <a href={`login`}>Login</a></button>
+              {username.length == 0 && <button class="btn btn-outline-success" type="submit">   <Link to="/login">Login</Link></button>}
+              {username.length > 0 && <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {username}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">My Profile</a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <a onClick={logout} class="dropdown-item" href="">Logout</a>
+                </div>
+              </div>}
+
             </form>
           </div>
         </div>

@@ -4,7 +4,6 @@ import Heroimage from '../components/Heroimage'
 const LandingPage = () => {
   return (
    <>
-   <Navbar/>
    <Heroimage/>
    </>
   )

@@ -1,0 +1,16 @@
+.home-container{
+    margin-left: 11em;
+    background-color: #bebcbc;
+    padding: 4em;
+}
+.no-todo-div{
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 5em;
+}
+.no-todo-div p{
+    display: inline;
+}
+.no-todo-div button{
+   margin-left: 1em;
+}

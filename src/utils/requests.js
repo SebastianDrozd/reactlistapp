@@ -1,7 +1,30 @@
 import axios from 'axios'
 
-export const getAllTodos = () => {
-   return axios.get("http://127.0.0.1:3001/groceries")
+
+
+export const createUserTodo = (jwt,todo) => {
+   const config = {
+      headers: { Authorization: `Bearer ${jwt}` },
+   }
+   return axios.post("http://127.0.0.1:4000/api/v1/todos",todo,config)
+}
+
+
+export const getUserTodos = (jwt,email) => {
+   const config = {
+      headers: { Authorization: `Bearer ${jwt}` },
+   }
+   console.log(config)
+   return axios.get(`http://127.0.0.1:4000/api/v1/todos/${email}`,config)
+}
+
+
+export const getAllTodos = (jwt) => {
+   const config = {
+      headers: { Authorization: `Bearer ${jwt}` },
+   }
+   console.log(config)
+   return axios.get("http://127.0.0.1:4000/api/v1/todos",config)
 }
 
 export const signUpUser = () => {
@@ -27,6 +50,13 @@ export const createApiToken = () => {
       grant_type:"client_credentials"
    }
    return axios.post("https://dev-at5wa91z.us.auth0.com/oauth/token",data,config)
+}
+
+export const authGetTodos= (jwt) => {
+   const config = {
+      headers: { Authorization: `Bearer ${jwt}` },
+   }
+   return axios.get("http://127.0.0.1:4000/api/todos",config)
 }
 
 

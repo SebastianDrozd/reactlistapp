@@ -5,7 +5,7 @@ body, html {
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://automate.io/blog/wp-content/uploads/2020/02/Best-To-Do-List-apps-cover.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cms-assets.tutsplus.com/cdn-cgi/image/width=630/uploads/users/2660/posts/35190/image/zimed-app-landing-page-html-template-J33MNVG.jpg");
 
   /* Set a specific height */
   height: 1000px;

@@ -1,0 +1,15 @@
+.coming-up-tasks-container{
+    background-color: #ffffff;
+    border: 1px solid rgb(247, 247, 247);
+    border-radius: 10px;
+    padding: 2em;
+    margin: 0 auto;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    width: 75%;
+    height: 100%;
+    margin-top: 2em;
+}
+.coming-up-task-title {
+    font-weight: 400;
+    margin-bottom: 10px;
+}

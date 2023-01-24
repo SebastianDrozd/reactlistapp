@@ -1,0 +1,11 @@
+.todo-card{
+    width:10em;
+    height: 10em;
+    border: 1px solid black;
+    margin: 1em;
+    text-align: center;
+    
+}
+.todo-title{
+    font-weight: bold;
+}

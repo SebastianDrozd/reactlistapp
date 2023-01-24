@@ -10,7 +10,7 @@ const Signup = () => {
     }
     const testLogin = () => {
         checkLoggedStatus().then(res => {
-            console.log(res.data)
+         
         
         })
     }
