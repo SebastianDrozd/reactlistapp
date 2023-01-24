@@ -1,15 +1,20 @@
 .OverDueTask-container{
     width: 100%;
-    height: 8em;
+    min-height: 8em;
     border: 1px solid rgb(213, 213, 213);
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 1em;
 }
 
 .OverDue-icon-container{
+ flex: 1;
+ text-align: center;
  
- 
+}
+.o-column{
+  flex:2;
 }
 .OverDue-column{
   display: flex;
@@ -18,18 +23,14 @@
   align-items: center;
   max-width: 15em;
   min-width: 12em;
+  text-align: center;
+
 }
-.circle-overdue{
-  border:2px solid rgb(255, 152, 152);
-  padding: 8px;
-  border-radius: 25%;
-  margin-bottom: 0em !important;
+.c-div{
+  flex:1
 }
-.circle-overdue:hover{
-  background-color: crimson;
-  color: white;
-  cursor: pointer;
-}
+
+
 
 .dot {
     height: 15px;
@@ -41,7 +42,13 @@
   }
 
   .overdue-description{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     margin-bottom: 0em !important;
+  }
+
+  .overdue-date{
+    margin-top: 5px ;
+    font-size: 14px;
+    color: rgb(173, 17, 49);
   }

@@ -1,13 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useAuth0 } from "@auth0/auth0-react";
-import Navbar from '../components/Navbar';
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { getAllTodos, getUserTodos } from '../utils/requests';
+import { getUserTodos } from '../utils/requests';
 import SideBar from '../components/SideBar';
-import PostTodo from '../components/PostTodo';
 import "../css/Home.css"
-
-
 import NoTodo from '../components/NoTodo';
 import OverDueTasks from '../components/OverDueTasks';
 import ComingUpTasks from '../components/ComingUpTasks';
@@ -23,18 +18,6 @@ const Home = () => {
   useEffect(() => {
     getUserTodos(token, email).then(res => {
       setTodos(res.data)
-      let newDate = new Date()
-      let dateCopy = newDate
-      dateCopy.setDate(dateCopy.getDate() + 7)
-     
-      console.log(dateCopy)
-      for(let to of todos){
-        console.log("dude date", to.dateDue)
-        if(new Date(to.dateDue) < dateCopy && new Date(to.dateDue) > new Date()) {
-          console.log("this is the date", to.dateDue)
-          setComingUpTodos([...comingUpTodos, to])
-        }
-      }
     })
     
     
@@ -48,8 +31,8 @@ const Home = () => {
         <SideBar></SideBar>
         <div className='home-container'>
           {todos.length == 0 &&  <NoTodo />}
-          <OverDueTasks todos = {todos.filter(todo => new Date(todo.dateDue) < new Date())}/> 
-          <ComingUpTasks todos = {comingUpTodos} />   
+          <OverDueTasks updater = {setTodos} todos = {todos.filter(todo => new Date(todo.dateDue) < new Date() && todo.completed != "true")}/> 
+          <ComingUpTasks todos = {todos} />   
           <SampleComponent/>    
         </div>
       </>

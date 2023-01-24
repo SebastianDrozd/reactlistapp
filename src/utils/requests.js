@@ -59,4 +59,11 @@ export const authGetTodos= (jwt) => {
    return axios.get("http://127.0.0.1:4000/api/todos",config)
 }
 
+export const setCompleteTodo = (jwt,id) => {
+   const config = {
+      headers: { Authorization: `Bearer ${jwt}` },
+   }
+   let todo = []
+   return  axios.put(`http://127.0.0.1:4000/api/v1/todos/${id}/complete`,todo,config)
+}
 

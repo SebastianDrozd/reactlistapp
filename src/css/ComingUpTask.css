@@ -4,11 +4,34 @@
     justify-content: space-between;
     border: 1px solid rgb(197, 197, 197);
     padding: 1em;
+    align-items: center;
+    
+}
+.coming-up-icon-container{
+    flex: 1;
+    text-align: center;
+}
+.c-column{
+    flex: 2;
+    text-align: center;
+}
+.coming-up-div{
+flex: 1;
 }
 .dot-coming-up{
-    height: 25px;
-    width: 25px;
+    height: 15px;
+    width: 15px;
     background-color: rgba(255, 153, 0, 0.892);
     border-radius: 50%;
     display: inline-block;
+    
+}
+.coming-up-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 15em;
+    min-width: 12em;
+    text-align: center;
 }

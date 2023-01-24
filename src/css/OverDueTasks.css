@@ -13,9 +13,3 @@
     font-weight: 400;
     margin-bottom: 10px;
 }
-.Tasks-map-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly
-}
